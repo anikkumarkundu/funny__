@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Are you mad?🤔</title>
+<style>
+  body {
+    background: #ffebf2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  h1 {
+    color: #ff4081;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    margin: 0 1rem;
+    transition: all 0.2s ease;
+  }
+  #yes {
+    background: Green;
+    color: #fff;
+  }
+  #no {
+    background: #ccc;
+  }
+  #no:hover {
+    position: absolute;
+  }
+  #message {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #4caf50;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Are you mad?🤔</h1>
+<div>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+</div>
+<div id="message">Jantam🤣🤣</div>
+
+<script>
+  const noButton = document.getElementById('no');
+  const yesButton = document.getElementById('yes');
+  const message = document.getElementById('message');
+
+  // Move "No" button to a random position on hover
+  noButton.addEventListener('mouseenter', () => {
+    const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+    const y = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+    noButton.style.left = x + 'px';
+    noButton.style.top = y + 'px';
+  });
+
+  // Show message if "Yes" is clicked
+  yesButton.addEventListener('click', () => {
+    message.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
